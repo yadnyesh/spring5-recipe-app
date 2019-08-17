@@ -75,13 +75,13 @@ public class IngredientController {
         return "recipe/ingredient/ingredientform";
     }
 
-//    @PostMapping("recipe/{recipeId}/ingredient")
-//    public String saveOrUpdate(@ModelAttribute IngredientCommand command){
-//        IngredientCommand savedCommand = ingredientService.saveIngredientCommand(command);
-//
-//        log.debug("saved receipe id:" + savedCommand.getRecipeId());
-//        log.debug("saved ingredient id:" + savedCommand.getId());
-//
-//        return "redirect:/recipe/" + savedCommand.getRecipeId() + "/ingredient/" + savedCommand.getId() + "/show";
-//    }
+    @PostMapping("recipe/{recipeId}/ingredient")
+    public String saveOrUpdate(@ModelAttribute IngredientCommand command){
+        IngredientCommand savedCommand = ingredientService.saveIngredientCommand(command);
+
+        log.debug("saved receipe id:" + savedCommand.getRecipeId());
+        log.debug("saved ingredient id:" + savedCommand.getId());
+
+        return "redirect:/recipe/" + savedCommand.getRecipeId() + "/ingredient/" + savedCommand.getId() + "/show";
+    }
 }
