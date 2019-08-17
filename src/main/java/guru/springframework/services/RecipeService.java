@@ -2,6 +2,7 @@ package guru.springframework.services;
 
 import guru.springframework.commands.RecipeCommand;
 import guru.springframework.domain.Recipe;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Set;
 
@@ -15,4 +16,6 @@ public interface RecipeService {
     Recipe findById(Long l);
 
     RecipeCommand saveRecipeCommand(RecipeCommand command);
+
+    RecipeCommand findCommandById(Long l);
 }
